@@ -21,7 +21,7 @@
             <tr th:each = "book : ${books}">
                 <td th:text = "${book.book_name}">test</td>
                 <td th:text = "${book.years}">test</td>
-                <td th:text = "${book.author_id}">test</td>
+                <td th:text = "${book.author}">test</td>
                 <td> <a th:href = "@{'/book/deleteBook?id='+${book.book_id}}">delete</a></td>
             </tr>
         </table>

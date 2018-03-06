@@ -1,9 +1,6 @@
 package kz.kaznitu.lessons.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Publisher {
@@ -14,16 +11,19 @@ public class Publisher {
     private String email;
     private int phone;
     private String address;
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private Book book;
 
-    /*kuka5*/
     public Publisher() {
     }
 
-    public Publisher(String name, String email, int phone, String address) {
+    public Publisher(String name, String email, int phone, String address, Book book) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.address = address;
+        this.book = book;
     }
 
     public long getId() {
@@ -64,5 +64,13 @@ public class Publisher {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 }
