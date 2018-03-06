@@ -76,7 +76,7 @@ public class WorkerController {
     @RequestMapping(value = "/deleteContact",method = RequestMethod.GET)
     public ModelAndView deleteContact(@RequestParam("id") long idd){
         workerRepository.deleteById(idd);
-        return new ModelAndView("redirect:/work/all2");
+        return new ModelAndView("redirect:/work/all");
     }
 
 

@@ -76,7 +76,7 @@ public class DepartmentController {
     @RequestMapping(value = "/deleteContact",method = RequestMethod.GET)
     public ModelAndView deleteContact(@RequestParam("id") long idd){
         departmentRepository.deleteById(idd);
-        return new ModelAndView("redirect:/dept/all2");
+        return new ModelAndView("redirect:/dept/all");
     }
 
 }
